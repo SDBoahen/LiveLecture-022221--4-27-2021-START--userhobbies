@@ -1,0 +1,53 @@
+
+
+#Before Actions
+
+
+
+
+
+<%= form_tag "/users do" %>
+
+<% text_field_tag :name %>
+
+<% submit_tag "DON'T NEED A VALUE HOMIE 🙌🏾" %>
+
+<% end %>
+
+
+========
+
+
+
+
+<%= form_for "/users do |f| %>
+#  <%= form_for User.new do |f| %>
+
+<% f.text_field :name %>
+
+<% f.submit "DON'T NEED A VALUE HOMIE 🙌🏾" %>
+
+<% end %>
+
+** id
+L> Update
+** no id
+L> Create
+
+
+========
+
+
+
+
+<%= form_with "/users do |f| %>
+#  <%= form_for User.new do |f| %>
+
+<% f.text_field :name %>
+
+<% f.submit "DON'T NEED A VALUE HOMIE 🙌🏾" %>
+
+<% end %>
+
+
+========

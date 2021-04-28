@@ -1,0 +1,19 @@
+<!-- <h1> YURRRR </h1> -->
+
+<h1> ALL OF OUR USERSSSS -- WhichShouldNeverBeTheCaseUnlessItsASocialApp 😅 </h1>
+
+
+<ul>
+
+    <% @users.each do |user| %>
+
+
+        <%= link_to user.name, user_path(user) %>
+        <!--  <%= link_to user, user %>  -->
+
+
+        <br><br>
+
+    <% end %>
+
+</ul>

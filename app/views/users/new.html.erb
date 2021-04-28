@@ -1,0 +1,46 @@
+<h1> MAKE A NEW USER! YAAAAAAAAAAAAAAY </h1>
+
+
+<%= form_tag "/users" do %>
+
+    Name: <%= text_field_tag :name %>
+    Username: <%= text_field_tag :username %>
+    
+    <%= submit_tag "DON'T NEED A VALUE HOMIE 🙌🏾" %>
+    
+<% end %>
+
+
+<br><br>
+
+
+
+
+<%= form_for @user do |f| %>
+<%#= form_for User.new do |f| %>
+
+    Name: <%= f.text_field :name %>
+    Username: <%= f.text_field :username %>
+    
+    <%= f.submit "DON'T NEED A VALUE HOMIE 🙌🏾" %>
+    
+<% end %>
+
+
+<br><br>
+
+
+
+
+<%= form_with model: @user do |f| %>
+    
+        Name: <%= f.text_field :name %>
+        Username: <%= f.text_field :username %>
+        
+        <%= f.submit "DON'T NEED A VALUE HOMIE 🙌🏾" %>
+        
+<% end %>
+    
+    
+<br><br>
+
