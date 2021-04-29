@@ -1,53 +1,138 @@
 
+!!  INDEX  >  NEW
+**  Written Out Route Listing
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+
+<h2><%= link_to "+👥 Create a New User+", "http://google.com" %></h2>
+
+
+  # #INDEX  
+  get '/users', to: "users#index", as:"users" 
+
+  ########  '/users'  
+
+
+  # #NEW 
+  get '/users/new', to: "users#new", as:"new_user" 
+  # !!  Route Order  !!
+
+  ########  '/users/TEXT'  
+
+
+  # #SHOW  
+  get '/users/:id', to: "users#show", as:"user" 
+  # **** was "/user/" ??
+
+  ########  '/users/:id'
+
+
+
+  # #CREATE 
+  post '/users', to: "users#create"
+
+
+
+  # #EDIT
+  get '/users/:id/edit', to: "users#edit", as: "edit_user"
+
+
+  # #UPDATE/PATCH
+  patch '/users/:id', to: "users#update"
+  # ** No View =GENERALLY= Alias  |  CASE: DELETE
+
+
+
+  params[:user][:name]
+
+
+================================
+
+
+
+
+
+    def create
+        binding.pry
+        @user = User.new(user_params)
+        # @user = User.new(params[:user][:name], params[:user][:username])
+        if @user.save
+            binding.pry
+            redirect_to user_path(@user)
+        else
+            redirect_to new_user_path
+        end
+    end 
+
+
+
+
+    private
+
+
+    def user_params
+        params.require(:user).permit(:name, :username)
+        #WHO??                #WHAT??
+        #  !! Don't Need to Require (id)
+        #  ** permitted: true
+    end
+
+
+
+
+
 
 #Before Actions
+L> Any Prep
+-|-
+#Private 
+
+
+before_action :find_user, only: [:show]
+
+
+....
+
+
+private 
+#ANYTHING BELOW !!
+
+    def find_user
+        @user = User.find_by_id(params[:id])
+    end
+
+
+================================
 
 
 
 
 
-<%= form_tag "/users do" %>
-
-<% text_field_tag :name %>
-
-<% submit_tag "DON'T NEED A VALUE HOMIE 🙌🏾" %>
-
-<% end %>
 
 
-========
+def show
+    if !@sushi
+        redirect_to 
+    end
+end
+-|- (DELETE)
 
 
 
 
-<%= form_for "/users do |f| %>
-#  <%= form_for User.new do |f| %>
-
-<% f.text_field :name %>
-
-<% f.submit "DON'T NEED A VALUE HOMIE 🙌🏾" %>
-
-<% end %>
-
-** id
-L> Update
-** no id
-L> Create
-
-
-========
+================================
 
 
 
 
-<%= form_with "/users do |f| %>
-#  <%= form_for User.new do |f| %>
-
-<% f.text_field :name %>
-
-<% f.submit "DON'T NEED A VALUE HOMIE 🙌🏾" %>
-
-<% end %>
 
 
-========
+

@@ -1,0 +1,75 @@
+==4=27=2021==
+
+
+*** PATH HELPERS ***
+
+*** => notation in routes 
+-|- Leonetti
+
+
+
+
+Forms
+
+Form_For
+Form_Tag
+Form_With
+
+✅ WHICH IS GOING BYE-BYE??
+
+==(Forms)========================
+
+
+
+
+== Form_With
+L> Will Stay
+
+
+Rails Magic✨
+L> Smart Buttons
+** id : Update
+** no id : Create
+
+
+
+====(Soon)(Deprecated)================
+
+
+
+
+========(Form_For)
+
+<%= form_for @user do |f| %>
+<%#= form_for User.new do |f| %>
+
+    Name: <%= f.text_field :name %>
+    Username: <%= f.text_field :username %>
+    
+    <%= f.submit "DON'T NEED A VALUE HOMIE 🙌🏾" %>
+    
+<% end %>
+
+========
+
+
+
+
+========(Form_Tag)
+
+<%= form_tag "/users" do %>
+
+    Name: <%= text_field_tag :name %>
+    Username: <%= text_field_tag :username %>
+    
+    <%= submit_tag "DON'T NEED A VALUE HOMIE 🙌🏾" %>
+    
+<% end %>
+
+========
+
+
+
+
+================================================================(FORMS)
+
