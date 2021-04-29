@@ -63,9 +63,7 @@ Hobbies
 
 [✔️] All Complete Actions [✔️]
 
--
--
--
+=
 
 [✔️] Rails New
 
