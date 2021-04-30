@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 
-    before_action :find_user, only: [:show, :edit]
+    before_action :find_user, only: [:show, :edit, :update, :destroy]
 
 
 
@@ -37,12 +37,24 @@ class UsersController < ApplicationController
 
     # "Form Getterz"
     def edit
-        binding.pry
     end
     def update
-        binding.pry
+        # binding.pry
+        @user.update(user_params)
+        # binding.pry
+        redirect_to user_path(@user)
+            #YOU CAN ALSO DO THIS: redirect_to @user 
     end 
     # "Validatorzzzz"
+
+
+
+
+    def destroy
+        binding.pry
+        @user.destroy
+        redirect_to users_path
+    end
 
 
 

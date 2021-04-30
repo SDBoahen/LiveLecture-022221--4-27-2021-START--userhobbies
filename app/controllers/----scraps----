@@ -3,55 +3,24 @@
 **  Written Out Route Listing
 
 
+!!  OmniAuth
+-|- Facebook
+!!!! LABS for it 
+
+WET
+write everthing TWICE lol
+we enjoy TYPING lol
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
+!!  (Partial)s
+L> (_form)
+** { 13:00 }
 
 
-
-
-
-
-<h2><%= link_to "+👥 Create a New User+", "http://google.com" %></h2>
-
-
-  # #INDEX  
-  get '/users', to: "users#index", as:"users" 
-
-  ########  '/users'  
-
-
-  # #NEW 
-  get '/users/new', to: "users#new", as:"new_user" 
-  # !!  Route Order  !!
-
-  ########  '/users/TEXT'  
-
-
-  # #SHOW  
-  get '/users/:id', to: "users#show", as:"user" 
-  # **** was "/user/" ??
-
-  ########  '/users/:id'
-
-
-
-  # #CREATE 
-  post '/users', to: "users#create"
-
-
-
-  # #EDIT
-  get '/users/:id/edit', to: "users#edit", as: "edit_user"
-
-
-  # #UPDATE/PATCH
-  patch '/users/:id', to: "users#update"
-  # ** No View =GENERALLY= Alias  |  CASE: DELETE
-
-
-
-  params[:user][:name]
+!! Rendering Form Elsewhere
+L> Path 
 
 
 ================================
@@ -59,62 +28,60 @@
 
 
 
+<%= form_with url: "/users" do |f| %>
+    
+    Name: <%= f.text_field :name, placeholder: "placeholder text" %>
+    Username: <%= f.text_field :username %>
+    
+    <%= f.submit "EDIT THIS USER 💁💫🙆✨" %>
+    
+<% end %>
 
-    def create
+
+
+
+
+    def update
         binding.pry
-        @user = User.new(user_params)
-        # @user = User.new(params[:user][:name], params[:user][:username])
-        if @user.save
-            binding.pry
-            redirect_to user_path(@user)
+
+        if @user    
+            @user.update(user_params)
+
+                if @user.errors.any?
+                    render "edit"
+                else
+                    redirect_to @user  # SHOW  user_path(@user)
+                end
+
         else
-            redirect_to new_user_path
+            render "edit"
         end
-    end 
 
-
-
-
-    private
-
-
-    def user_params
-        params.require(:user).permit(:name, :username)
-        #WHO??                #WHAT??
-        #  !! Don't Need to Require (id)
-        #  ** permitted: true
     end
 
 
 
 
-
-
-#Before Actions
-L> Any Prep
--|-
-#Private 
-
-
-before_action :find_user, only: [:show]
-
-
-....
-
-
-private 
-#ANYTHING BELOW !!
-
-    def find_user
-        @user = User.find_by_id(params[:id])
+    def destroy
+        @user.destroy
+        redirect_to users_path
     end
+
+
 
 
 ================================
 
+???
+
+ <br><h2><%= link_to "EDIT This User's Info 💁💫", "/users/<%= @user.id %>/edit" %></h2><br>
+
+
+???
 
 
 
+X
 
 
 
@@ -124,6 +91,13 @@ def show
     end
 end
 -|- (DELETE)
+
+X
+
+
+
+
+
 
 
 

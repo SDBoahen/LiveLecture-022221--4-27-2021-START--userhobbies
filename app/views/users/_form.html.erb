@@ -1,0 +1,11 @@
+<h1> THIS IS A PARTIAL YJAY! </h1>
+
+
+<%= form_with model: @user do |f| %>
+    
+    Name: <%= f.text_field :name, placeholder: @user.name %>
+    Username: <%= f.text_field :username, placeholder: @user.username %>
+    
+    <%= f.submit "EDIT THIS USER 💁💫🙆✨" %>
+    
+<% end %>
