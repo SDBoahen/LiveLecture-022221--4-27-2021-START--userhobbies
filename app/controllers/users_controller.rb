@@ -18,10 +18,15 @@ class UsersController < ApplicationController
     # "Form Getterz"
     def new
         @user = User.new
+
+        3.times { @user.outfits.build }
+        # @user.outfits.build
+
     end
     def create
         binding.pry
         @user = User.new(user_params)
+
         if @user.save
             binding.pry
             redirect_to user_path(@user)
@@ -68,7 +73,9 @@ class UsersController < ApplicationController
 
 
     def user_params
-        params.require(:user).permit(:name, :username)
+        params.require(:user).permit(:name, :username, 
+            outfits_attributes: [:name, :heat, :price, :times_worn]
+        )
         #WHO??                  WHAT??
     end
 

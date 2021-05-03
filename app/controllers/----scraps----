@@ -3,6 +3,147 @@
 **  Written Out Route Listing
 
 
+
+
+
+
+****
+
+        <f.label :name, "What's Your Name? 😄  *** ALSO EXPLAIN LOCAL: TRUE - JS ajax"
+
+
+
+
+====    SCHEMA HELP
+
+ 
+            t.string :name
+            Name of Fit: <%= f.text_field :name %>
+
+
+            t.string :top
+            Type of Top: <%= f.text_field :top %>
+            t.string :bottom
+            Type of Bottoms: <%= f.text_field :bottom %>
+            
+
+            t.boolean :is_full_piece
+            Is It a Full Piece Item: <%= f.radio_button :is_full_piece, true %> Y <%= f.radio_button :is_full_piece, false %> N
+    
+            t.string :full_piece
+            Full : <%= f.text_field :full_piece %>
+
+
+            t.string :shoes
+            Type of Kicks: <%= f.text_field :shoes %>
+
+            t.string :head_covering
+            Type of Head Covering: <%= f.text_field :head_covering %>
+            
+            t.string :accessory
+            Type of Accessory: <%= f.text_field :accessory %>
+            
+
+            t.boolean :heat
+            You Rockin' Some HEAT or NAAAH 🔥👀: <%= f.radio_button :is_full_piece, true %> Y <%= f.radio_button :is_full_piece, false %> N
+    
+
+            t.float :price
+            Fit Price: <%= f.number_field :price, step: :any %>
+            
+            t.integer :times_worn
+            Times Worn: <%= f.number_field :times_worn, step: :any %>
+
+
+
+
+
+
+==== ACTUAL FORM
+
+
+
+            Name of Fit: <%= ff.text_field :name %>
+
+
+            Type of Top: <%= ff.text_field :top %>
+            Type of Bottoms: <%= ff.text_field :bottom %>
+            
+
+            Is It a Full Piece Item: <%= ff.radio_button :is_full_piece, true %> Y <%= ff.radio_button :is_full_piece, false %> N
+    
+            Full : <%= ff.text_field :full_piece %>
+
+
+            Type of Kicks: <%= ff.text_field :shoes %>
+
+            Type of Head Covering: <%= ff.text_field :head_covering %>
+            
+            Type of Accessory: <%= ff.text_field :accessory %>
+            
+
+            You Rockin' Some HEAT or NAAAH 🔥👀: <%= ff.radio_button :is_full_piece, true %> Y <%= ff.radio_button :is_full_piece, false %> N
+    
+
+            Fit Price: <%= ff.number_field :price, step: :any %>
+            
+            Times Worn: <%= ff.number_field :times_worn, step: :any %>
+
+
+
+
+
+
+
+
+
+
+
+
+            <h2> Whatchu Rockin' Tho? 🙆✨ </h2>
+            <%= f.fields_for :outfits do |ff| %>
+
+                Name of Fit: <%= ff.text_field :name %>
+                <br>
+                You Rockin' Some HEAT or NAAAH 🔥👀: <%= ff.radio_button :heat, true %> Y 
+                <%= ff.radio_button :heat, false %> N
+                <br>    
+                Fit Price: <%= ff.number_field :price, step: :any %>
+                <br>
+                Times Worn: <%= ff.number_field :times_worn, step: :any %>
+
+
+            <% end %>
+
+
+
+
+
+            <%= f.fields_for :outfits do |ff| %>
+
+1
+
+            <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 !!  OmniAuth
 -|- Facebook
 !!!! LABS for it 
@@ -30,42 +171,12 @@ L> Path
 
 <%= form_with url: "/users" do |f| %>
     
-    Name: <%= f.text_field :name, placeholder: "placeholder text" %>
-    Username: <%= f.text_field :username %>
+    Name: <%= ff.text_field :name, placeholder: "placeholder text" %>
+    Username: <%= ff.text_field :username %>
     
-    <%= f.submit "EDIT THIS USER 💁💫🙆✨" %>
+    <%= ff.submit "EDIT THIS USER 💁💫🙆✨" %>
     
 <% end %>
-
-
-
-
-
-    def update
-        binding.pry
-
-        if @user    
-            @user.update(user_params)
-
-                if @user.errors.any?
-                    render "edit"
-                else
-                    redirect_to @user  # SHOW  user_path(@user)
-                end
-
-        else
-            render "edit"
-        end
-
-    end
-
-
-
-
-    def destroy
-        @user.destroy
-        redirect_to users_path
-    end
 
 
 
@@ -82,6 +193,12 @@ L> Path
 
 
 X
+
+
+
+
+
+
 
 
 

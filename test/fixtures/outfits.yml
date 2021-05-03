@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  top: MyString
+  bottom: MyString
+  is_full_piece: false
+  full_piece: MyString
+  shoes: MyString
+  head_covering: MyString
+  accessory: MyString
+  heat: false
+  price: 1.5
+  times_worn: 1
+  user: one
+
+two:
+  name: MyString
+  top: MyString
+  bottom: MyString
+  is_full_piece: false
+  full_piece: MyString
+  shoes: MyString
+  head_covering: MyString
+  accessory: MyString
+  heat: false
+  price: 1.5
+  times_worn: 1
+  user: two
