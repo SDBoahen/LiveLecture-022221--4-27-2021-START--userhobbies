@@ -1,0 +1,57 @@
+<% if @user %>  <!-- NESTED : WITH A USER -->
+
+
+
+
+    <h2> Whatchu Rockin' Tho <%= @user.name %>? 🙆✨ </h2>
+
+    <%= form_with model: [@user, @outfit] do |f| %>
+        <br>
+
+        Name of Fit: <%= f.text_field :name %>
+        <br>
+        You Rockin' Some HEAT or NAAAH 🔥👀: <%= f.radio_button :heat, true %> Y 
+        <%= f.radio_button :heat, false %> N
+        <br>    
+        Fit Price: <%= f.number_field :price, step: :any %>
+        <br>
+        Times Worn: <%= f.number_field :times_worn, step: :any %>
+
+        <%= f.submit %>
+
+    <% end %><br>
+
+    <br><br><br><br>
+
+
+
+
+<% else %>  <!-- NON-NESTED : NO USER -->
+
+
+
+
+    <h2> Whatchu Rockin' Tho? 🙆✨ </h2>
+
+    <%= form_with model: @outfit do |f| %>
+        <br>
+
+        Name of Fit: <%= f.text_field :name %>
+        <br>
+        You Rockin' Some HEAT or NAAAH 🔥👀: <%= f.radio_button :heat, true %> Y 
+        <%= f.radio_button :heat, false %> N
+        <br>    
+        Fit Price: <%= f.number_field :price, step: :any %>
+        <br>
+        Times Worn: <%= f.number_field :times_worn, step: :any %>
+
+        <%= f.submit %>
+
+    <% end %><br>
+
+    <br><br><br><br>
+
+
+
+
+<% end %>

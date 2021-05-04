@@ -1,42 +1,94 @@
 Rails.application.routes.draw do
 
+
+      # get 'outfits/index'
+      # get 'outfits/show'
+      # get 'outfits/new'
+      # get 'outfits/create'
+      # get 'outfits/edit'
+      # get 'outfits/update'
+      # get 'outfits/destroy'
+
+      # Mess With in Lecture?
+
+
   # resources :users
 
 
     # resources :users #ONLY !! *** , except: [:index, :show]
 
-    
-  #INDEX  
-  get '/users', to: "users#index", as:"users" 
-
-
-  #NEW
-  get '/users/new', to: "users#new", as:"new_user"
-
-  #CREATE
-  post '/users', to: "users#create"
 
 
 
 
-  #SHOW  
-  get '/users/:id', to: "users#show", as:"user"
+  resources :users do
+
+    resources :outfits
+
+  end
+  #  /users/:user_id/outfits
+
+  resources :outfits
+  #  /outfits
 
 
 
 
-  #EDIT
-  get '/users/:id/edit', to: "users#edit", as:"edit_user"
 
-  #UPDATE  ~  PATCH
-  patch '/users/:id', to: "users#update"
+####  USER WRITTEN OUT ROUTES
 
 
+  # #INDEX  
+  # get '/users', to: "users#index", as:"users" 
 
 
-  #DELETE
-  delete '/users/:id', to: "users#destroy"
+  # #NEW
+  # get '/users/new', to: "users#new", as:"new_user"
 
+  # #CREATE
+  # post '/users', to: "users#create"
+
+
+
+
+  # #SHOW  
+  # get '/users/:id', to: "users#show", as:"user"
+
+
+
+
+  # #EDIT
+  # get '/users/:id/edit', to: "users#edit", as:"edit_user"
+
+  # #UPDATE  ~  PATCH
+  # patch '/users/:id', to: "users#update"
+
+
+
+
+  # #DELETE
+  # delete '/users/:id', to: "users#destroy"
+
+
+########
+
+
+
+
+
+
+
+####  OUTFIT WRITTEN OUT ROUTES
+
+
+    # get '/outfits', to: "outfits#index"
+    #   # "NORMALLY" 
+
+    # get '/users/:user_id/outfits', to: "outfits#index"
+    #   # Nested 
+
+
+#######
 
 
  
