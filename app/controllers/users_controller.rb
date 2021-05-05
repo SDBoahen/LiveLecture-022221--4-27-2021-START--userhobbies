@@ -19,19 +19,22 @@ class UsersController < ApplicationController
     def new
         @user = User.new
 
-        3.times { @user.outfits.build }
-        # @user.outfits.build
-
+            3.times { @user.outfits.build }
+            # @user.outfits.build
+            
+        #render :
     end
     def create
         binding.pry
         @user = User.new(user_params)
 
         if @user.save
-            binding.pry
-            redirect_to user_path(@user)
+            session[:user_id] = @user.id
+                binding.pry  #  Final Check!! 👀
+            redirect_to user_path(@user)    #  /user/:id
         else
             render :new
+            #  ***  HIGHLIGHT  -|- Errors 
         end
 
     end 
@@ -73,8 +76,10 @@ class UsersController < ApplicationController
 
 
     def user_params
-        params.require(:user).permit(:name, :username, 
+        params.require(:user).permit(:name, :username, :password,
+
             outfits_attributes: [:name, :heat, :price, :times_worn]
+
         )
         #WHO??                  WHAT??
     end

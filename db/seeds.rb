@@ -18,7 +18,10 @@ User.destroy_all
     User.create(name: Faker::JapaneseMedia::Naruto.character, 
     username: Faker::Internet.username, 
     email: Faker::Internet.email, 
-    location: Faker::Address.city, 
+    location: Faker::Address.city,
+
+        password: "123",
+
     age: rand(10..100)
     )
 

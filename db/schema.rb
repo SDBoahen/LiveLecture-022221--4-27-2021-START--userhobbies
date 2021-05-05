@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_02_234023) do
+ActiveRecord::Schema.define(version: 2021_05_05_115835) do
 
   create_table "outfits", force: :cascade do |t|
     t.string "name"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_05_02_234023) do
     t.boolean "heat"
     t.float "price"
     t.integer "times_worn"
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_outfits_on_user_id"
@@ -35,7 +35,17 @@ ActiveRecord::Schema.define(version: 2021_05_02_234023) do
     t.string "username"
     t.string "email"
     t.string "location"
+    t.string "password_digest"
     t.integer "age"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ysers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

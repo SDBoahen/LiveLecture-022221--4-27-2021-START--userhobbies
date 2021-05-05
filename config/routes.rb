@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
 
+      # get 'sessions/new'
+      # get 'sessions/login'
+      # get 'sessions/create'
+      # get 'sessions/destroy'
+
+
       # get 'outfits/index'
       # get 'outfits/show'
       # get 'outfits/new'
@@ -9,7 +15,9 @@ Rails.application.routes.draw do
       # get 'outfits/update'
       # get 'outfits/destroy'
 
-      # Mess With in Lecture?
+        # Mess With in Lecture?
+
+
 
 
   # resources :users
@@ -35,7 +43,36 @@ Rails.application.routes.draw do
 
 
 
-####  USER WRITTEN OUT ROUTES
+
+
+
+########   SESSIONS ROUTES
+
+
+  get 'login', to: "sessions#new"
+
+  post 'login', to: "sessions#create"
+
+  delete 'logout', to: "sessions#destroy"
+
+
+  # 🚧 #
+
+    get 'welcome', to: "session#welcome" 
+
+  # 🚧 #
+    
+
+######## 
+# REMEBER FOLKS  ::  NO resource :sessions 
+
+
+
+
+
+
+
+####  (USER)  WRITTEN OUT ROUTES
 
 
   # #INDEX  
@@ -78,7 +115,8 @@ Rails.application.routes.draw do
 
 
 
-####  OUTFIT WRITTEN OUT ROUTES
+
+####  (OUTFIT)  WRITTEN OUT ROUTES
 
 
     # get '/outfits', to: "outfits#index"

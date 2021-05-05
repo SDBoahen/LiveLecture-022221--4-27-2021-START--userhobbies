@@ -1,0 +1,2 @@
+class Yser < ApplicationRecord
+end

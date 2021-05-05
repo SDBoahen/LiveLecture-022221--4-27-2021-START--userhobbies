@@ -1,0 +1,2 @@
+class YsersController < ApplicationController
+end

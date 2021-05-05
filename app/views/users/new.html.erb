@@ -1,17 +1,26 @@
-<h1> MAKE A NEW USER! YAAAAAAAAAAAAAAY </h1>
+<h1> Hey! Let's Sign You Up As a ✨NEW USER✨! YAAAAAAAAAAAAAAY! </h1>
 
 
-
+<br><br>
 
 
 📋FORM_WITH: MODEL👥
 <%= form_with model: @user do |f| %>
 
+
         <%= f.label :name, "What's Your Name? 😄:" %>
-        <%= f.text_field :name %>
-        Username: <%= f.text_field :username %>
+        <%= f.text_field :name %><br>
+
+        <%= f.label :username %>
+        <%= f.text_field :username %><br>
+
+        <!--  Password : -->
+        <%= f.label :password, "PROBABLY JUST WANT THIS TO SAY PASSWORD..no?😅:" %>
+        <%= f.password_field :password %><br>
+
 
         <br><br>
+
 
             <h2> Whatchu Rockin' Tho? 🙆✨ </h2>
             <%= f.fields_for :outfits do |ff| %>
@@ -24,15 +33,18 @@
                 <br>    
                 Fit Price: <%= ff.number_field :price, step: :any %>
                 <br>
-                Times Worn: <%= ff.number_field :times_worn, step: :any %>
+                Times Worn: <%= ff.number_field :times_worn, step: :any %>    <br><br>
 
             <% end %><br>
 
+
         <br><br><br><br>
 
+
+        <%= f.submit "Signup! 💁💫✨" %>
+            <!--  <%= f.submit "YOU DON'T NEED ANOTHER SUBMIT BUTTON HOMIE 🙌🏾" %>  -->
         
-        <%= f.submit "YOU DON'T NEED ANOTHER SUBMIT BUTTON HOMIE 🙌🏾" %>
-        
+
 <% end %>
 
 
@@ -86,4 +98,33 @@
     
     
 <br><br>
+
+
+
+
+
+
+
+
+📋FORM_TAG: REMEBER :: Takes a LINK🔗
+<%= form_tag "/users" do %>
+
+    Name: <%= text_field_tag :name %>
+    Username: <%= text_field_tag :username %>
+    
+    <%= submit_tag "DON'T NEED A VALUE HOMIE 🙌🏾" %>
+    
+<% end %><br><br><br><br><br><br><br><br><br><br>
+
+
+📋FORM_FOR: REMEMBER :: Takes a MODEL👥
+<%= form_for @user do |f| %>
+    <%#= form_for User.new do |f| %>
+    
+        Name: <%= f.text_field :name %>
+        Username: <%= f.text_field :username %>
+        
+        <%= f.submit "DON'T NEED A VALUE HOMIE 🙌🏾" %>
+        
+<% end %><br><br><br><br><br><br><br><br><br><br>
 
