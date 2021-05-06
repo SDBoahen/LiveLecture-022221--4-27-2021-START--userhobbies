@@ -1,7 +1,19 @@
 <h1> Hey! Let's Sign You Up As a ✨NEW USER✨! YAAAAAAAAAAAAAAY! </h1>
 
 
-<br><br>
+<br>
+
+    <% if @user.errors.any? %>
+
+        <% @user.errors.full_messages.each do |error| %>
+        
+            <h4><%= error %></h4>
+
+        <% end %>
+        
+    <% end %>
+
+<br>
 
 
 📋FORM_WITH: MODEL👥
@@ -14,7 +26,7 @@
         <%= f.label :username %>
         <%= f.text_field :username %><br>
 
-        <!--  Password : -->
+        <!--  Password : *** PASSWORD_FIELD?? ***  -->
         <%= f.label :password, "PROBABLY JUST WANT THIS TO SAY PASSWORD..no?😅:" %>
         <%= f.password_field :password %><br>
 

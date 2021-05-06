@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     # "Form Getterz"
     def new
         @user = User.new
+        # binding.pry
 
             3.times { @user.outfits.build }
             # @user.outfits.build
@@ -25,9 +26,11 @@ class UsersController < ApplicationController
         #render :
     end
     def create
-        binding.pry
-        @user = User.new(user_params)
 
+        @user = User.new(user_params)
+        binding.pry
+
+        # Can Only Save If Valid
         if @user.save
             session[:user_id] = @user.id
                 binding.pry  #  Final Check!! 👀
