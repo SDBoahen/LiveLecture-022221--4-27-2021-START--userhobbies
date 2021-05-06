@@ -10,6 +10,12 @@ class CreateUserHobbies < ActiveRecord::Migration[6.1]
       t.belongs_to :hobby, null: false, foreign_key: true
 
       t.timestamps
+
+
+      # TERMINAL COMMAND
+      # rails g resource UserHobby utensil time_spent:integer enjoying:boolean user:belongs_to hobby:belongs_to
+
+      
     end
   end
 end

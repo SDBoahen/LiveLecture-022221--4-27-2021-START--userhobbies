@@ -9,27 +9,124 @@
 
 
 
+UserHobby.destroy_all
 
-User.destroy_all
+    Hobby.destroy_all
+
+        Outfit.destroy_all
+
+    User.destroy_all
+
+
+
+
+
+
 
 
 20.times do
 
     User.create(name: Faker::JapaneseMedia::Naruto.character, 
-    username: Faker::Internet.username, 
-    email: Faker::Internet.email, 
-    location: Faker::Address.city,
+        username: Faker::Internet.username, 
+        email: Faker::Internet.email, 
+        location: Faker::Address.city,
 
-        password: "123",
+            password: "123",
 
-    age: rand(10..100)
+        age: rand(10..100)
     )
 
 end 
 
 
+
+
+list_of_hobbies = [
+    "acrobats",
+
+
+    "basketball",
+    "drawing",
+    "fixing cars",
+    "gardening",
+    "hiking",
+    "juggling",
+    "meditation",
+    "painting",
+
+
+    "zZzooBly🤷🏾‍♂️"
+]
+    how_many_hobbies = list_of_hobbies.length
+    # list_of_descriptions = [
+
+    # ]
+how_many_hobbies.times do
+
+    # Could Have Also Done a  (For_Each)
+
+    Hobby.create(name: list_of_hobbies.uniq.sample,
+    description: "{ This is a Placeholder For Now : This should describe what this hobby consists of }")
+
+end
+####  Console Helpers
+
+    # Hobby.create(name: "", description: "")
+    # Hobby.all.size
+
+################
+    
+
+
+
+list_of_utensils = [
+
+    "a mat",
+
+    "a pen",
+    "a pencil",
+
+
+    "boots",
+
+    "paper",
+    "shin guards"
+
+]
+40.times do
+
+    UserHobby.create(utensil: list_of_utensils.sample, 
+        
+        time_spent: rand(1..1000000), 
+        enjoying: true, 
+
+            #    new_for_you? : boolean
+
+        user: User.all.sample,
+        #  user_id 
+        hobby: Hobby.all.sample)
+        #  hobby_id 
+
+        #  !!  NOT - user_id: User.all.sample
+
+end
+####  Console Helpers
+
+    # UserHobby.create(utensil: "", time_spent: 0, enjoying: true, user_id: User.all.sample, hobby_id: Hobby.all.sample)
+    
+################
+
+
+
+
+
+
+
+
+
 puts "
-YAAAAAAAAAAAAAAY!!
+
+✨🙌🏾🎊YAAAAAAAAAAAAAAY!!🎊🙌🏾✨
 
 "
 

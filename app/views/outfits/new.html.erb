@@ -40,7 +40,20 @@
 
 
 
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+
+
+
+
+
+
+
+
 <%= form_for @outfit do |f| %>
     <%= f.collection_select :id, Outfit.all, :id, :name %>
     <%= f.submit %>
-  <% end %>
+<% end %>
+

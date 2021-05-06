@@ -6,6 +6,11 @@ class CreateHobbies < ActiveRecord::Migration[6.1]
 
 
       t.timestamps
+
+      
+      #  TERMINAL CODE
+      #  rails g resource Hobby name description   
+
     end
   end
 end

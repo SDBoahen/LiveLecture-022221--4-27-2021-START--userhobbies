@@ -8,13 +8,17 @@
         <%= @user.username %>
         <br>
         <%= @user.email %>
-        <br>
+        <br><!-- if -->
         <%= @user.location %>
         <br>
         <%= @user.age %>
         <br><br>
 
 <br><br>
+
+
+<br><h2><%= link_to "ADD/TRY a New Hobby 🤹", new_user_hobby_path %></h2><br>
+
 
 <br><h2><%= link_to "EDIT This User's Info 💁💫", edit_user_path(@user) %></h2><br>
 

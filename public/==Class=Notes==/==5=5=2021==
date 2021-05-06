@@ -17,10 +17,16 @@
 == 🚨🚨 NESTED FORMS ==
 
 
+✅
+==== General Overview
+
+
+❗️❗️
 ==== Build Out New One
 - G 
 
 
+❗️❗️
 (.build)
 - Ekaynuh
 
@@ -33,6 +39,7 @@
 == Nested Resources ==
 
 
+❗️❗️
 ==== Satiated with an Admin
 - Mac 
 L> Show How in Routes.rb 
@@ -42,19 +49,23 @@ L> Show How in Routes.rb
 
 
 
-
+❗️❗️
 == Strong Params  ==
 - Cel 
+
 
 ================================
 
 
 
-
+❗️❗️
 == Relationships/Associations Setup
 
+
+❗️❗️
 ==== Has_Many 
 - Leonetti
+
 
 ================================
 

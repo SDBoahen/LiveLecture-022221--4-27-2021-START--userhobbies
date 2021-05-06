@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
 
-  resources :user_hobbies
-  resources :hobbies
 
-  
+
       # get 'sessions/new'
       # get 'sessions/login'
       # get 'sessions/create'
@@ -35,11 +33,25 @@ Rails.application.routes.draw do
 
   resources :users do
 
+
     resources :outfits
-    #  TRY NESTING ANOTHER RESOURCE  -  Hobbies   ***
+    #  /users/:user_id/outfits
+
+
+    resources :user_hobbies  #  *** HIGHLIGHT *** #
+    #  /users/:user_id/user_hobbies
+    
+
+    #  MAYBE ~ TRY TRIPPLE NESTING ANOTHER RESOURCE 🤷🏾‍♂️  -  Hobbies   ***
+
 
   end
-  #  /users/:user_id/outfits
+
+
+
+  resources :user_hobbies
+  resources :hobbies
+
 
   resources :outfits
   #  /outfits

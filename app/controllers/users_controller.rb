@@ -37,7 +37,6 @@ class UsersController < ApplicationController
             redirect_to user_path(@user)    #  /user/:id
         else
             render :new
-            #  ***  HIGHLIGHT  -|- Errors 
         end
 
     end 
