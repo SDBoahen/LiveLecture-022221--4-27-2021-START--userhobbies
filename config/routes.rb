@@ -34,6 +34,9 @@ Rails.application.routes.draw do
   resources :users do
 
 
+    resources :pets
+
+
     resources :outfits
     #  /users/:user_id/outfits
 
@@ -54,9 +57,11 @@ Rails.application.routes.draw do
 
 
   resources :outfits
-  #  /outfits
+  #  /outfits/++
 
-
+  # resources :pets
+  #  /pets/++
+  #  !!  NO SOLO ROUTES  !!
 
 
 

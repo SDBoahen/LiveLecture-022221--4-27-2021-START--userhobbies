@@ -5,7 +5,24 @@ class UserHobbiesController < ApplicationController
         @user_hobbies = UserHobby.all
     end
     def show
-        find_user_hobby
+        # binding.pry
+
+        @user_hobby = UserHobby.find_by_id(params[:id])
+        # find_user_hobby
+        #  Have Access To :  @user_hobby
+
+
+        #  Putting  (user_id_on_user_hobby) in Params!
+        params[:user_id_on_user_hobby] = @user_hobby.user_id
+        @user = User.find_by_id(params[:user_id_on_user_hobby])
+
+
+        #  Putting  (hobby_id_on_user_hobby) in Params!
+        params[:hobby_id_on_user_hobby] = @user_hobby.hobby_id
+        @hobby = Hobby.find_by_id(params[:hobby_id_on_user_hobby])
+        
+        binding.pry
+
     end 
 
 

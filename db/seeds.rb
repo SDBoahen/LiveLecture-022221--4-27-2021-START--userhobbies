@@ -41,6 +41,10 @@ end
 
 
 
+
+
+
+
 list_of_hobbies = [
     "acrobats",
 
@@ -61,21 +65,35 @@ list_of_hobbies = [
     # list_of_descriptions = [
 
     # ]
-how_many_hobbies.times do
 
-    # Could Have Also Done a  (For_Each)
 
-    Hobby.create(name: list_of_hobbies.uniq.sample,
-    description: "{ This is a Placeholder For Now : This should describe what this hobby consists of }")
+    list_of_hobbies.each do |hobby|
 
-end
-####  Console Helpers
+        Hobby.create(name: hobby,
+        description: "{ This is a Placeholder For Now : This should describe what this hobby consists of }")
+
+    end 
+
+
+####  Console Debugging-Helpers
 
     # Hobby.create(name: "", description: "")
     # Hobby.all.size
 
 ################
-    
+
+    # how_many_hobbies.times do
+
+    # Could Have Also Done a  (.Each)
+    # Hobby.create(name: list_of_hobbies.uniq.sample,
+    # description: "{ This is a Placeholder For Now : This should describe what this hobby consists of }")
+
+    # end    
+
+
+
+
+
 
 
 
@@ -110,7 +128,7 @@ list_of_utensils = [
         #  !!  NOT - user_id: User.all.sample
 
 end
-####  Console Helpers
+####  Console Debugging-Helpers
 
     # UserHobby.create(utensil: "", time_spent: 0, enjoying: true, user_id: User.all.sample, hobby_id: Hobby.all.sample)
     

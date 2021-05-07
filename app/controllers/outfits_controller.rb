@@ -130,6 +130,6 @@ private
       @user = User.find_by_id(params[:user_id])
   end
      def outfit_with_user_params
-         params.require(:outfit).permit(:name, :heat, :price, :times_worn, :user_id)
+         params.require(:outfit).permit(:name, :heat, :price, :times_worn,  :user_id)
      end 
 
